@@ -4,12 +4,10 @@ class Solution:
             return []
         
         nums.sort()
-        # print(nums)
         ans = set()
         for i in range(len(nums)):
             j,k = i+1, len(nums)-1
             while j<k:
-                # print(i,j,k)
                 if i == j:
                     j += 1
                 if i == k:
