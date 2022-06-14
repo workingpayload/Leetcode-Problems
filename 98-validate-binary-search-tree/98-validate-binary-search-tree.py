@@ -24,3 +24,4 @@ class Solution:
             self.inorder(node.left)
             self.newroot.append(node.val)
             self.inorder(node.right)
+        
