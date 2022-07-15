@@ -1,17 +1,15 @@
 class Solution:
     def greatestLetter(self, s: str) -> str:
         
-        newlist = []
-        
+        new = ""
         
         for i in s:
-            if i.upper() in s:
-                if i.lower() in s:
-                    newlist.append(i.upper())
+            if i.isupper() and i.lower() in s:
+                if i>new:
+                    new = i.upper()
+                        
+        return new                
                     
                     
-                    
-        if newlist == []:
-            return ""
-        return max(newlist)            
+                                
         
