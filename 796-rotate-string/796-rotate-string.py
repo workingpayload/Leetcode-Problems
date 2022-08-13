@@ -1,21 +1,13 @@
 class Solution:
     def rotateString(self, s: str, goal: str) -> bool: 
-        
-        def issub(s,t):
-            if s in t:return True
-            return False
-        
-        
-        
-        
         n = len(s)
         m = len(goal)
-        
-        if n!=m:
+    
+        if len(s)!=len(goal):
             return False
-        
-        if m>0 and n>0:
+
+        if len(s)>0 and len(goal)>0:
             new_s = s+s
-            return issub(goal,new_s)
+            return (goal in new_s)
         else:
             return False
