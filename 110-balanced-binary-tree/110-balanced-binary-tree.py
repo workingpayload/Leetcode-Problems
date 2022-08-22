@@ -11,17 +11,19 @@ class Solution:
             if not root:
                 return -1
             
-            return max(height(root.left),height(root.right))+1
+            heightleft = height(root.left)
+            if heightleft == float('-inf'):
+                return float('-inf')
+            
+            heightright= height(root.right)
+            if heightright == float('inf'):
+                return float('-inf')
+            
+            diff = heightleft - heightright
+            
+            if abs(diff)>1:
+                return float('-inf')
+            else:
+                return max(heightleft,heightright)+1
         
-        
-        if not root:
-            return True
-        
-        dif = height(root.left) - height(root.right)
-        
-        if abs(dif)>1:
-            return False
-        
-        
-        return self.isBalanced(root.left) and self.isBalanced(root.right)
-        
+        return height(root)!=float('-inf')
