@@ -1,15 +1,13 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         
-        local = 0
-        global_ = float('-inf')
+        dp = [1]*len(nums)
+        dp[0]=nums[0]
         
-        for i in range(len(nums)):
+        for i in range(1,len(nums)):
+            dp[i] = max(dp[i-1]+nums[i],nums[i])
             
-            local = max(nums[i],nums[i]+local)
-            if local>global_:
-                global_ = local
-                
-        return global_        
+        return max(dp)    
         
+       
         
