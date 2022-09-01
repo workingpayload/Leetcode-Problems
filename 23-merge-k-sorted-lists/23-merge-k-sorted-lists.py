@@ -8,22 +8,25 @@ class Solution:
         
         if not lists or len(lists)==0:
             return None
-    
+        
+        
         while(len(lists)>1):
-            mergedlist = []
+            mergedlist =[]
             
             for i in range(0,len(lists),2):
                 
                 l1 = lists[i]
-                l2 = lists[i+1] if (i+1)<len(lists) else None
+                l2 = lists[i+1] if i+1<len(lists) else None
                 
                 mergedlist.append(self.mergetwo(l1,l2))
                 
             lists = mergedlist
             
-        return lists[0]   
-                
-        
+        return lists[0]
+    
+    
+    
+    
     def mergetwo(self,l1,l2):
         
         dummy = ListNode()
@@ -47,13 +50,16 @@ class Solution:
             tail.next = l2
             
         return dummy.next    
-        
-       
-        
-        
+            
+                
         
         
         
         
         
+        
+                
+                
+                
+                
         
