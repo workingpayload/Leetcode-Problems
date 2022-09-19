@@ -7,20 +7,21 @@
 class Solution:
     def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
         
-        def traverse(root,left):
+        self.res = 0
+        
+        def helper(root,left):
             
             if not root.left and not root.right and left:
-                res.append(root.val)
-            
+                self.res+=root.val
+                
             if root.left:
-                traverse(root.left,True)
+                helper(root.left,True)
+                
             if root.right:
-                traverse(root.right,False)
-            
-            
-        res = []
+                helper(root.right,False)
+                
+        helper(root,False)        
+        return self.res
         
-        traverse(root,False)
         
-        return sum(res)
         
