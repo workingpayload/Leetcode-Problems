@@ -1,12 +1,16 @@
 class Solution:
     def removeDigit(self, number: str, digit: str) -> str:
         
-        maxVal = 0
-        for i in range(len(number)):
-            if number[i] == digit:
-                result = int(number[:i] + number[i+1:])
-                maxVal = max(maxVal,result)
-        return str(maxVal)
+        res = []
         
+        l = list(number)
+        
+        for i in range(len(number)):
+            
+            if number[i]==digit:
+                res.append(int("".join(l[:i]+l[i+1:])))
+                
+        return str(max(res))        
+
         
         
