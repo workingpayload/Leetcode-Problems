@@ -22,6 +22,7 @@ class Solution:
                     l+=1
                     while nums[l]==nums[l-1] and l<r:
                         l+=1
+                    
                             
                 elif (nums[i]+nums[l]+nums[r])>0:
                            r-=1
